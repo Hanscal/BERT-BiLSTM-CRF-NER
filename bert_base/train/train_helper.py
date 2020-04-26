@@ -9,7 +9,7 @@
 
 import argparse
 import os
-
+from bert_base.driver import PROJECT_ROOT_PATH
 __all__ = ['get_args_parser']
 
 def get_args_parser():
@@ -17,10 +17,10 @@ def get_args_parser():
     parser = argparse.ArgumentParser()
     if os.name == 'nt':
         bert_path = 'F:\chinese_L-12_H-768_A-12'
-        root_path = r'C:\workspace\python\BERT-BiLSTM-CRF-NER'
+        root_path = PROJECT_ROOT_PATH
     else:
-        bert_path = '/home/macan/ml/data/chinese_L-12_H-768_A-12/'
-        root_path = '/home/macan/ml/workspace/BERT-BiLSTM-CRF-NER'
+        bert_path = os.path.join(PROJECT_ROOT_PATH,'bert/Before/pretrained_model/chinese_L-12_H-768_A-12/')
+        root_path = PROJECT_ROOT_PATH
 
     group1 = parser.add_argument_group('File Paths',
                                        'config the path, checkpoint and filename of a pretrained/fine-tuned BERT model')
@@ -43,7 +43,7 @@ def get_args_parser():
                         help='Whether to run eval on the dev set.')
     group2.add_argument('-do_predict', action='store_false', default=True,
                         help='Whether to run the predict in inference mode on the test set.')
-    group2.add_argument('-batch_size', type=int, default=64,
+    group2.add_argument('-batch_size', type=int, default=32,
                         help='Total batch size for training, eval and predict.')
     group2.add_argument('-learning_rate', type=float, default=1e-5,
                         help='The initial learning rate for Adam.')
