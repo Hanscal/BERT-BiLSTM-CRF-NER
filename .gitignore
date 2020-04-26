@@ -1,3 +1,6 @@
 output/
 pictures/
 NERdata/
+__pycache__/
+bert_base/__pycache__/
+bert_base/*/__pycache__/
