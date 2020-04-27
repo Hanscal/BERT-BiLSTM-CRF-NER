@@ -71,7 +71,7 @@ def get_args_parser():
     group2.add_argument('-do_lower_case', type=bool, default=True,
                         help='Whether to lower case the input text.')
     group2.add_argument('-clean', type=bool, default=True)
-    group2.add_argument('-device_map', type=str, default='0',
+    group2.add_argument('-device_map', type=str, default='6',
                         help='witch device using to train')
 
     # add labels

@@ -81,9 +81,9 @@ def write_to_file(file, context):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='data pre process')
-    parser.add_argument('--train_data', type=str, default='./NERdata/train.txt')
-    parser.add_argument('--dev_data', type=str, default='./NERdata/dev.txt')
-    parser.add_argument('--test_data', type=str, default='./NERdata/test.txt')
+    parser.add_argument('--train_data', type=str, default='./NERdata/train_bak.txt')
+    parser.add_argument('--dev_data', type=str, default='./NERdata/dev_bak.txt')
+    parser.add_argument('--test_data', type=str, default='./NERdata/test_bak.txt')
     parser.add_argument('--max_seq_length', type=int, default=126)
     args = parser.parse_args()
 
